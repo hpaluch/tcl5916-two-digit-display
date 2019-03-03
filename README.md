@@ -47,9 +47,15 @@ Following Eagle libraries were used:
   used definition of [2-digit HD-A544D LED display][HD-A544D]
 
 
-# Setup
+# Bill of Material
 
-TODO
+* 2x [TCL5916][TLC5916 - tme.eu] - from tme.eu
+* LED display [HD-A544D][HD-A544D] - from gme.cz
+* 2x 1K resistor - from my inventory
+* 2x 100nF capacitor - from my inventory
+* pinhead connector 6 pins in 1 row - used
+  20-pin [DS1021-1x20SF1-10][DS1021-1x20SF1-10] - from gme.cz
+
 
 # Connecting TLC5916 to Interfaces
 
@@ -67,7 +73,8 @@ Design shortcomings:
   to allow custom power supply (for example `+12V`) different
   from main circuit `+5V` power supply.
 
-
+[DS1021-1x20SF1-10]: https://www.gme.cz/oboustranny-kolik-s1g20-2-54mm-v-13-80mm
+[TLC5916 - tme.eu]: https://www.tme.eu/en/details/tlc5916in/led-drivers/texas-instruments/
 [Connecting TLC5916 to PC using LC 341A USB adapter]: https://github.com/hpaluch/tcl5916-two-digit-display/tree/master/ch341-tlc5916
 [HD-A544D]: https://www.gme.cz/led-display-14-2mm-red-hd-a544d
 [moje.lbr]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/moje.lbr?raw=true
