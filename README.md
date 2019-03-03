@@ -9,6 +9,15 @@ LED display.
 
 # Design files
 
+> Early design comments (prototype on bread-board):
+>
+> Use lower value for `R1` and `R2` - `1K` seems to be fine.
+> I guessed the `5K` values because
+> I can't understand the `R-EXT` calculations
+> in [TCL5916 data-sheet][TLC5916]. Just having simple formula
+> like `R_ext (Ohm) = x * I_led (mA)` would be fine...
+
+
 Design was done in [Eagle 9.3.0 Free][Eagle 9.3.0 Free]
 
 Schematic is:
