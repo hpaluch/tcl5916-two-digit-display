@@ -26,15 +26,15 @@ Wire all 3 things together using table below:
 |GND|N/A|GND|GND|Common ground|
 |CS0|Output|LE|CH1|Latch Enable - active in HIGH|
 |CS1|Output|CLK|CH2|Clock - active in rising edge|
-|CS2|Output|N/A|CH4|Fake /SS (slave select)[^1]|
+|CS2|Output|N/A|CH4|Fake /SS (slave select)<sup>1</sup>|
 |MOSI|Output|SDI|CH3|serial data for TLC5916|
 
 NOTE: The [TLC5916 LED board] uses its own `+5V` power supply,
       because the drawn current can be quite high - because
       of up to 16 LED lighting together...
 
-[^1]: trick so SPI decoder in Logic Analyzer will work with these data
-      (that are not otherwise SPI compatible)
+<sup>1</sup>) trick so SPI decoder in Logic Analyzer will work with these data
+  (that are not otherwise SPI compatible)
 
 # Logic Analyzer output
 
