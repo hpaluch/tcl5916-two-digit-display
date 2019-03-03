@@ -51,6 +51,13 @@ Following Eagle libraries were used:
 
 TODO
 
+# Connecting TLC5916 to Interfaces
+
+There are following subprojects:
+* [Connecting 7-segment 2-digit display to TCL5916][Connecting 7-segment 2-digit display to TCL5916] - connecting
+  this board to PC with USB adapter
+
+
 # Known bugs/limitations
 
 Design shortcomings:
@@ -61,6 +68,7 @@ Design shortcomings:
   to allow custom power supply (for example `+12V`) different
   from main circuit `+5V` power supply.
 
+[Connecting 7-segment 2-digit display to TCL5916]: https://github.com/hpaluch/tcl5916-two-digit-display/ch341-tlc5916
 
 [HD-A544D]: https://www.gme.cz/led-display-14-2mm-red-hd-a544d
 [moje.lbr]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/moje.lbr?raw=true
