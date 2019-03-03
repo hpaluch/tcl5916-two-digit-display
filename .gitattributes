@@ -1,0 +1,10 @@
+# Eagle 9.3.0 Free files
+*.lbr text eol=lf
+*.sch text eol=lf
+*.brd text eol=lf
+
+# should be default
+*.png binary
+*.jpg binary
+*.pdf binary
+
