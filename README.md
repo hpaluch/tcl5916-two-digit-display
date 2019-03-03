@@ -56,8 +56,9 @@ TODO
 Design shortcomings:
 * digital signals (`CLK`, `SDI`, `SDO`, `LE`) should be routed more
   carefully - not crossing `LED` lines (where are high current spikes).
-* LED display should power supply pins (`13` and `14`) should use
-  jumper to allow custom power supply (for example `+12V`) different
+* LED display power supply pins (`13` and `14`) should be
+  wired  to `+5V` supply through jumper pins
+  to allow custom power supply (for example `+12V`) different
   from main circuit `+5V` power supply.
 
 
