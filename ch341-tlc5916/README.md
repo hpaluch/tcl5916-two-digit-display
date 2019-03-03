@@ -20,6 +20,7 @@ for generic HW/SW setup instructions. Here is project specific info only.
 # Wiring LC341 with [TLC5916 LED board][2-digit 7-segment LED with TLC5916] and Logic Analyzer
 
 Wire all 3 things together using table below:
+
 |CH341A pin|Direction from CH341A|TLC5916 pin|Logic Analyzer pin|Description|
 |----------|---------------------|-----------|------------------|-----------|
 |GND|N/A|GND|GND|Common ground|
