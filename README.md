@@ -54,7 +54,7 @@ TODO
 # Connecting TLC5916 to Interfaces
 
 There are following subprojects:
-* [Connecting 7-segment 2-digit display to TCL5916][Connecting 7-segment 2-digit display to TCL5916] - connecting
+* [Connecting TLC5916 to PC using LC 341A USB adapter][Connecting TLC5916 to PC using LC 341A USB adapter] -segment 2-digit display to TCL5916][Connecting 7-segment 2-digit display to TCL5916] - connecting
   this board to PC with USB adapter
 
 
@@ -69,7 +69,7 @@ Design shortcomings:
   from main circuit `+5V` power supply.
 
 
-[Connecting 7-segment 2-digit display to TCL5916]: https://github.com/hpaluch/tcl5916-two-digit-display/tree/master/ch341-tlc5916
+[Connecting TLC5916 to PC using LC 341A USB adapter]: https://github.com/hpaluch/tcl5916-two-digit-display/tree/master/ch341-tlc5916
 [HD-A544D]: https://www.gme.cz/led-display-14-2mm-red-hd-a544d
 [moje.lbr]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/moje.lbr?raw=true
 [TLC5916]: http://www.ti.com/lit/ds/slvs695d/slvs695d.pdf

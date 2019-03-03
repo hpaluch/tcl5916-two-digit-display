@@ -1,4 +1,4 @@
-# Connecting TLC5916 to PCI using LC 341A USB adapter
+# Connecting TLC5916 to PC using LC 341A USB adapter
 
 > WARNING!
 >
