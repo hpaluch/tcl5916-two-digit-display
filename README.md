@@ -28,11 +28,25 @@ Also in:
 * [PDF version][PCB PDF]
 * [Eagle 9.3.0 Free version][PCB Eagle]
 
+
+Following Eagle libraries were used:
+
+* [zlalanne/eagle-library][zlalanne/eagle-library] for
+  definition of [TCL5916][TLC5916]
+* [moje.lbr][moje.lbr] - my own part library (originally for Eagle 3/DOS)
+  made in late 90's in college - 
+  used definition of [2-digit HD-A544D LED display][HD-A544D]
+
+
 # Setup
 
 TODO
 
 
+[HD-A544D]: https://www.gme.cz/led-display-14-2mm-red-hd-a544d
+[moje.lbr]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/moje.lbr?raw=true
+[TLC5916]: http://www.ti.com/lit/ds/slvs695d/slvs695d.pdf
+[zlalanne/eagle-library]: https://github.com/zlalanne/eagle-library/blob/master/lbr/zlalanne.lbr
 [PCB Eagle]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/tlc5916-2seg.brd?raw=true
 [PCB PDF]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/tlc5916-2seg-pcb.pdf?raw=true
 [Schematic Eagle]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/tlc5916-2seg.sch?raw=true
