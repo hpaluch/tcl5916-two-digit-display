@@ -51,6 +51,15 @@ Following Eagle libraries were used:
 
 TODO
 
+# Known bugs/limitations
+
+Design shortcomings:
+* digital signals (`CLK`, `SDI`, `SDO`, `LE`) should be routed more
+  carefully - not crossing `LED` lines (where are high current spikes).
+* LED display should power supply pins (`13` and `14`) should use
+  jumper to allow custom power supply (for example `+12V`) different
+  from main circuit `+5V` power supply.
+
 
 [HD-A544D]: https://www.gme.cz/led-display-14-2mm-red-hd-a544d
 [moje.lbr]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/moje.lbr?raw=true
