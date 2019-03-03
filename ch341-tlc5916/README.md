@@ -2,7 +2,8 @@
 
 > WARNING!
 >
-> Work in progress. Currently can send 8-bit data.
+> Work in progress. Currently sends `0` to `0xF` decoded to
+> 1st digit on LED display.
 
 Please see [master project README][2-digit 7-segment LED with TLC5916]
 for Schematic and/or PCB.

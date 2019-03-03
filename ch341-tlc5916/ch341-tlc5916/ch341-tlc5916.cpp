@@ -27,6 +27,44 @@
 #define HPCH_LOCIC_MASK_FAKE_SS HPCH_MASK_CS2
 
 
+// maps digit value 0 to 0xf to 7-segment display digit...
+//     a
+//   +---+
+//  f| g |b
+//    ---
+//  e|   |c
+//    ---   +p
+//     d   
+// 1st digit is mapped to byte:
+//    76543210
+//    bagfedcp
+
+static BYTE DIGI1_MAP[16] = {
+                        //    7654 3210
+                        //    bagf edcp       
+	0xde,  // 0 = abcdef => 0b1101 1110
+	0x82,  // 1 = bc     => 0b1000 0010
+	0xec,  // 2 = abged  => 0b1110 1100
+	0xe6,  // 3 = abcdg  => 0b1110 0110
+	0xb2,  // 4 = bcfg   => 0b1011 0010
+	0x76,  // 5 = acdfg  => 0b0111 0110
+	0x7e,  // 6 = acdefg => 0b0111 1110
+	0xc2,  // 7 = abc    => 0b1100 0010
+	0xfe,  // 8 = abcdefg=> 0b1111 1110
+	0xf6,  // 9 = abcdfg => 0b1111 0110
+	0xfa,  // A = abcefg => 0b1111 1010
+	0x3e,  // b = cdefg  => 0b0011 1110
+	0x5c,  // C = adef   => 0b0101 1100
+	0xae,  // d = bcdeg  => 0b1010 1110
+	0x7c,  // E = adefg  => 0b0111 1100
+	0x78  // F = aefg   => 0b0111 1000
+};
+
+static BYTE HpCh_Tlc5916_Map1stDigit(BYTE digNum){
+	return DIGI1_MAP[ digNum & 0xf ];
+}
+
+
 // send byte to TLC5916 using custom clocking (to avoid clock on latchEnable)
 static int HpCh_Tlc5916_SendByte(ULONG iIndex, BYTE b, BOOL latchEnable){
 	BYTE ioBuf[256];
@@ -89,20 +127,25 @@ int _tmain(int argc, _TCHAR* argv[])
 			goto exit1;
 	}
 
+#if 0
 	// to have nice data on logic analyzer
 	b = 0xa5;
 	printf("Sending 0x%x to TLC5916...\n",b);
 	if (!HpCh_Tlc5916_SendByte(iIndex,b,TRUE)){
 		goto exit1;
 	}
+#endif
 
-
-	for(i=0;i<5;i++){
-		printf("Sending 0x%x to TLC5916...\n",i);
-		if (!HpCh_Tlc5916_SendByte(iIndex,(BYTE)i,TRUE)){
+	for(i=0;i<16;i++){
+		char dummy[16];
+		BYTE d1 = HpCh_Tlc5916_Map1stDigit((BYTE)i);
+		printf("Sending 1st digit 0x%x =>  0x%x to TLC5916...\n",i,d1);
+		if (!HpCh_Tlc5916_SendByte(iIndex,d1,TRUE)){
 			goto exit1;
 		}
-		Sleep(1000);
+		printf("Press ENTER to continue...\n");
+		fgets(dummy,sizeof(dummy)-1,stdin);
+		//Sleep(1000);
 	}
 
 	ret = EXIT_SUCCESS;
