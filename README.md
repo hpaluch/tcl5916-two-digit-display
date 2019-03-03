@@ -9,7 +9,7 @@ LED display.
 
 # Design files
 
-Design was done in [Eagle 3.9.0 Free][Eagle 3.9.0 Free]
+Design was done in [Eagle 9.3.0 Free][Eagle 9.3.0 Free]
 
 Schematic is:
 
@@ -51,5 +51,5 @@ TODO
 [PCB PDF]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/tlc5916-2seg-pcb.pdf?raw=true
 [Schematic Eagle]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/tlc5916-2seg.sch?raw=true
 [Schematic PDF]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/tlc5916-2seg-sch.pdf?raw=true
-[Eagle 3.9.0 Free]: https://www.autodesk.com/products/eagle/free-download
+[Eagle 9.3.0 Free]: https://www.autodesk.com/products/eagle/free-download
 
