@@ -14,6 +14,7 @@
 
 #define HPCH_MASK_CS0  (1 << HPCH_BIT_CS0)
 #define HPCH_MASK_CS1  (1 << HPCH_BIT_CS1)
+#define HPCH_MASK_CS2  (1 << HPCH_BIT_CS2)
 #define HPCH_MASK_CLK  (1 << HPCH_BIT_CLK)
 #define HPCH_MASK_MOSI (1 << HPCH_BIT_MOSI)
 #define HPCH_MASK_MISO (1 << HPCH_BIT_MISO)
@@ -22,6 +23,8 @@
 #define HPCH_TLC5916_MASK_LE  HPCH_MASK_CS0
 #define HPCH_TLC5916_MASK_CLK HPCH_MASK_CS1
 #define HPCH_TLC5916_MASK_SDI HPCH_MASK_MOSI
+// fake Slave Select /SS - to allow SPI decoder to work in Logic Analyzer
+#define HPCH_LOCIC_MASK_FAKE_SS HPCH_MASK_CS2
 
 
 // send byte to TLC5916 using custom clocking (to avoid clock on latchEnable)
@@ -31,6 +34,8 @@ static int HpCh_Tlc5916_SendByte(ULONG iIndex, BYTE b, BOOL latchEnable){
 	int  i = 0;
 
 	memset(ioBuf,0,sizeof(ioBuf));
+	// lower fake /SS for SPI decoder in Logical Analyzer
+	ioBuf[ ioIdx++ ] = 0;
 	for(i=0;i<8;i++){
 		BYTE ioData = ( (b & ( 1 << (8-i-1))) ? HPCH_TLC5916_MASK_SDI : 0);
 		ioBuf[ ioIdx++ ] = ioData;
@@ -44,6 +49,8 @@ static int HpCh_Tlc5916_SendByte(ULONG iIndex, BYTE b, BOOL latchEnable){
 		ioBuf[ ioIdx++ ] = HPCH_TLC5916_MASK_LE;
 		ioBuf[ ioIdx++ ] = 0;
 	}
+	// raise fake /SS for SPI decoder in Logical Analyzer
+	ioBuf[ ioIdx++ ] = HPCH_LOCIC_MASK_FAKE_SS;
 	printf("ioIdx==%u\n",ioIdx);
 	if (!CH341BitStreamSPI(iIndex,ioIdx,ioBuf)){
 		fprintf(stderr,"CH341BitStreamSPI() failed\n");
@@ -72,9 +79,11 @@ int _tmain(int argc, _TCHAR* argv[])
 	// NOTE: must be called *after* CH341OpenDevice()
 	printf("CH341 driver  version: %lu\n", CH341GetDrvVersion());
 
-	// set CS0 (LE), CS1 (CLK) and MOSI (SDI) as output
-	// all pins active on high
-	if (!CH341Set_D5_D0(iIndex,HPCH_TLC5916_MASK_LE|HPCH_TLC5916_MASK_CLK|HPCH_TLC5916_MASK_SDI,0 )){
+	// set CS0 (LE), CS1 (CLK), CS2 (Fake /SS for Analyzer) and MOSI (SDI) as output
+	// all pins but "Fake /SS" active on high
+	if (!CH341Set_D5_D0(iIndex,
+			HPCH_TLC5916_MASK_LE|HPCH_TLC5916_MASK_CLK|HPCH_TLC5916_MASK_SDI|HPCH_LOCIC_MASK_FAKE_SS,
+			HPCH_LOCIC_MASK_FAKE_SS )){
 			printf("CH341_D5_D0 failed\r\n");
 			ret = EXIT_FAILURE;
 			goto exit1;
