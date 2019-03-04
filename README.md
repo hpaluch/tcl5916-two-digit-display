@@ -22,7 +22,7 @@ Design was done in [Eagle 9.3.0 Free][Eagle 9.3.0 Free]
 
 Schematic is:
 
-![Schematic of TLC5916 with LED display](https://github.com/hpaluch/tlc5916-two-digit-display/blob/master/Eagle/tcl5916-2seg-schematic.png?raw=true) 
+![Schematic of TLC5916 with LED display](https://github.com/hpaluch/tlc5916-two-digit-display/blob/master/Eagle/tlc5916-2seg-schematic.png?raw=true) 
 
 Also in:
 * [PDF version][Schematic PDF]
@@ -31,7 +31,7 @@ Also in:
 PCB design is:
 
 
-![PCB of TLC5916 with LED display](https://github.com/hpaluch/tlc5916-two-digit-display/blob/master/Eagle/tcl5916-2seg-pcb.png?raw=true) 
+![PCB of TLC5916 with LED display](https://github.com/hpaluch/tlc5916-two-digit-display/blob/master/Eagle/tlc5916-2seg-pcb.png?raw=true) 
 
 Also in:
 * [PDF version][PCB PDF]
