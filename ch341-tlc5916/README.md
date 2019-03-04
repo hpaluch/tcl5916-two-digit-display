@@ -18,7 +18,7 @@ Please see one of my CH341 projects, for example
 for generic HW/SW setup instructions. Here is project specific info only.
 
 
-# Wiring LC341 with [TLC5916 LED board][2-digit 7-segment LED with TLC5916] and Logic Analyzer
+# Wiring LC CH341A USB adapter with [TLC5916 LED board][2-digit 7-segment LED with TLC5916] and Logic Analyzer
 
 Wire all 3 things together using table below:
 
