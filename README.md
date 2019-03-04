@@ -22,7 +22,7 @@ Design was done in [Eagle 9.3.0 Free][Eagle 9.3.0 Free]
 
 Schematic is:
 
-![Schematic of TLC5916 with LED display](https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/tcl5916-2seg-schematic.png?raw=true) 
+![Schematic of TLC5916 with LED display](https://github.com/hpaluch/tlc5916-two-digit-display/blob/master/Eagle/tcl5916-2seg-schematic.png?raw=true) 
 
 Also in:
 * [PDF version][Schematic PDF]
@@ -31,7 +31,7 @@ Also in:
 PCB design is:
 
 
-![PCB of TLC5916 with LED display](https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/tcl5916-2seg-pcb.png?raw=true) 
+![PCB of TLC5916 with LED display](https://github.com/hpaluch/tlc5916-two-digit-display/blob/master/Eagle/tcl5916-2seg-pcb.png?raw=true) 
 
 Also in:
 * [PDF version][PCB PDF]
@@ -75,14 +75,14 @@ Design shortcomings:
 
 [DS1021-1x20SF1-10]: https://www.gme.cz/oboustranny-kolik-s1g20-2-54mm-v-13-80mm
 [TLC5916 - tme.eu]: https://www.tme.eu/en/details/tlc5916in/led-drivers/texas-instruments/
-[Connecting TLC5916 to PC using LC 341A USB adapter]: https://github.com/hpaluch/tcl5916-two-digit-display/tree/master/ch341-tlc5916
+[Connecting TLC5916 to PC using LC 341A USB adapter]: https://github.com/hpaluch/tlc5916-two-digit-display/tree/master/ch341-tlc5916
 [HD-A544D]: https://www.gme.cz/led-display-14-2mm-red-hd-a544d
-[moje.lbr]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/moje.lbr?raw=true
+[moje.lbr]: https://github.com/hpaluch/tlc5916-two-digit-display/blob/master/Eagle/moje.lbr?raw=true
 [TLC5916]: http://www.ti.com/lit/ds/slvs695d/slvs695d.pdf
 [zlalanne/eagle-library]: https://github.com/zlalanne/eagle-library/blob/master/lbr/zlalanne.lbr
-[PCB Eagle]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/tlc5916-2seg.brd?raw=true
-[PCB PDF]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/tlc5916-2seg-pcb.pdf?raw=true
-[Schematic Eagle]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/tlc5916-2seg.sch?raw=true
-[Schematic PDF]: https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/Eagle/tlc5916-2seg-sch.pdf?raw=true
+[PCB Eagle]: https://github.com/hpaluch/tlc5916-two-digit-display/blob/master/Eagle/tlc5916-2seg.brd?raw=true
+[PCB PDF]: https://github.com/hpaluch/tlc5916-two-digit-display/blob/master/Eagle/tlc5916-2seg-pcb.pdf?raw=true
+[Schematic Eagle]: https://github.com/hpaluch/tlc5916-two-digit-display/blob/master/Eagle/tlc5916-2seg.sch?raw=true
+[Schematic PDF]: https://github.com/hpaluch/tlc5916-two-digit-display/blob/master/Eagle/tlc5916-2seg-sch.pdf?raw=true
 [Eagle 9.3.0 Free]: https://www.autodesk.com/products/eagle/free-download
 
