@@ -1,4 +1,4 @@
-# Connecting 7-segment 2-digit display to TCL5916
+# Connecting 7-segment 2-digit display to TLC5916
 
 Here is project how to use 2x TLC5916 with 7-segment 2-digit
 LED display.
@@ -14,7 +14,7 @@ LED display.
 > Use lower value for `R1` and `R2` - `1K` seems to be fine.
 > I guessed the `5K` values because
 > I can't understand the `R-EXT` calculations
-> in [TCL5916 data-sheet][TLC5916]. Just having simple formula
+> in [TLC5916 data-sheet][TLC5916]. Just having simple formula
 > like `R_ext (Ohm) = x * I_led (mA)` would be fine...
 
 
@@ -41,7 +41,7 @@ Also in:
 Following Eagle libraries were used:
 
 * [zlalanne/eagle-library][zlalanne/eagle-library] for
-  definition of [TCL5916][TLC5916]
+  definition of [TLC5916][TLC5916]
 * [moje.lbr][moje.lbr] - my own part library (originally for Eagle 3/DOS)
   made in late 90's in college - 
   used definition of [2-digit HD-A544D LED display][HD-A544D]
@@ -49,7 +49,7 @@ Following Eagle libraries were used:
 
 # Bill of Material
 
-* 2x [TCL5916][TLC5916 - tme.eu] - from tme.eu
+* 2x [TLC5916][TLC5916 - tme.eu] - from tme.eu
 * LED display [HD-A544D][HD-A544D] - from gme.cz
 * 2x 1K resistor - from my inventory
 * 2x 100nF capacitor - from my inventory
