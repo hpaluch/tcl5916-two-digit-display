@@ -5,17 +5,41 @@ LED display.
 
 > WARNING!
 >
-> This project is in design stage. It was not yet verified!
+> This project is in design stage. It was only partially
+> verified on bread board - using single TLC5916 wiht 1-digit LED display.
 
 # Design files
 
 > Early design comments (prototype on bread-board):
 >
 > Use lower value for `R1` and `R2` - `1K` seems to be fine.
-> I guessed the `5K` values because
-> I can't understand the `R-EXT` calculations
-> in [TLC5916 data-sheet][TLC5916]. Just having simple formula
-> like `R_ext (Ohm) = x * I_led (mA)` would be fine...
+> I guessed the `5K` values because of complex data sheet. However finally:
+
+The relation between R<sub>ext</sub> and I<sub>led</sub> is following
+(default configuration after power-up):
+
+1. To get `I_led` in `[mA]` from `R_ext` in `[kOhm]` use:
+
+   ```
+   I_led = 1.25 * 15 / R_ext = 18.75 / R_ext
+   ```
+   
+   For example (used in our circuit now): `R_ext = 1 [kOhm]` => `I_led = 18.75 [mA]` 
+   
+2. To get `R_ext` in `[kOhm]` from `I_led` in `[mA]` use:
+
+   ```
+   R_ext = 1.25 * 15 / I_led = 18.75 / I_led
+   ```    
+
+
+   For example: `I_led = 20 [mA]` => `R_ext = 0.937 [kOhm] = 937 [Ohm]`
+
+
+Also see `Figure 4. Output Current vs Output Voltage` in data sheet
+to verify that `VLED` (voltage connected to common LED anode) 
+must be greater than `Voltage drop on LED` + `1V` (roughly).
+In our case using `+5V` voltage is OK.
 
 
 Design was done in [Eagle 9.3.0 Free][Eagle 9.3.0 Free]
