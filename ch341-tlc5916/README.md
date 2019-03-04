@@ -41,9 +41,9 @@ NOTE: The [TLC5916 LED board] uses its own `+5V` power supply,
 
 Here is sample output sending 0xA5 data to TLC5916 (just for test):
 
-![Sending data to TCL5916](https://github.com/hpaluch/tcl5916-two-digit-display/blob/master/ch341-tlc5916/assets/PulseView/tcl5916-sending-data.png?raw=true)
+![Sending data to TLC5916](https://github.com/hpaluch/tlc5916-two-digit-display/blob/master/ch341-tlc5916/assets/PulseView/tlc5916-sending-data.png?raw=true)
 
 
 [Accessing Microwire EEPROM 93LC86 from LC CH341A USB using SPI mode]: https://github.com/hpaluch/ch341-spi-93lc86 
 [CH341A USB to UART/IIC/SPI/TTL/ISP adapter EPP/MEM Parallel converter]: http://www.chinalctech.com/cpzx/Programmer/Serial_Module/2019/0124/266.html 
-[2-digit 7-segment LED with TLC5916]: https://github.com/hpaluch/tcl5916-two-digit-display
+[2-digit 7-segment LED with TLC5916]: https://github.com/hpaluch/tlc5916-two-digit-display
