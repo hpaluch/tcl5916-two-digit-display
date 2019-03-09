@@ -32,7 +32,8 @@ Wire all 3 things together using table below:
 |CS2|Output|N/A|CH4|Fake /SS (slave select)<sup>1</sup>|
 |MOSI|Output|SDI|CH3|serial data for TLC5916|
 
-NOTE: The [TLC5916 LED board] uses its own `+5V` power supply,
+NOTE: The [TLC5916 LED board][2-digit 7-segment LED with TLC5916]
+      uses its own `+5V` power supply,
       because the drawn current can be quite high - because
       of up to 16 LED lighting together...
 
