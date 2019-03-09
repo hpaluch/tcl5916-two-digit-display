@@ -27,7 +27,7 @@
 #define HPCH_LOCIC_MASK_FAKE_SS HPCH_MASK_CS2
 
 
-// maps digit value 0 to 0xf to 7-segment display digit...
+// maps 1st digit value 0 to 0xf to 7-segment display digit...
 //     a
 //   +---+
 //  f| g |b
@@ -62,6 +62,43 @@ static BYTE DIGI1_MAP[16] = {
 
 static BYTE HpCh_Tlc5916_Map1stDigit(BYTE digNum){
 	return DIGI1_MAP[ digNum & 0xf ];
+}
+
+// maps 2nd digit value 0 to 0xf to 7-segment display digit...
+//     a
+//   +---+
+//  f| g |b
+//    ---
+//  e|   |c
+//    ---   +p
+//     d   
+// 2nd digit is mapped to byte:
+//    76543210
+//    edgcpbaf
+
+static BYTE DIGI2_MAP[16] = {
+                        //    7654 3210
+                        //    edgc pbaf       
+	0xd7,  // 0 = abcdef => 0b1101 0111
+	0x14,  // 1 = bc     => 0b0001 0100
+	0xe6,  // 2 = abged  => 0b1110 0110
+	0x76,  // 3 = abcdg  => 0b0111 0110
+	0x35,  // 4 = bcfg   => 0b0011 0101
+	0x73,  // 5 = acdfg  => 0b0111 0011
+	0xf3,  // 6 = acdefg => 0b1111 0011
+	0x16,  // 7 = abc    => 0b0001 0110
+	0xf7,  // 8 = abcdefg=> 0b1111 0111
+	0x77,  // 9 = abcdfg => 0b0111 0111
+	0xb7,  // A = abcefg => 0b1011 0111
+	0xf1,  // b = cdefg  => 0b1111 0001
+	0xc3,  // C = adef   => 0b1100 0011
+	0xf4,  // d = bcdeg  => 0b1111 0100
+	0xe3,  // E = adefg  => 0b1110 0011
+	0xa3   // F = aefg   => 0b1010 0011
+};
+
+static BYTE HpCh_Tlc5916_Map2ndDigit(BYTE digNum){
+	return DIGI2_MAP[ digNum & 0xf ];
 }
 
 
@@ -138,7 +175,15 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	for(i=0;i<16;i++){
 		char dummy[16];
+
 		BYTE d1 = HpCh_Tlc5916_Map1stDigit((BYTE)i);
+		BYTE d2 = HpCh_Tlc5916_Map2ndDigit((BYTE)i);
+
+		printf("Sending 2nd digit 0x%x =>  0x%x to TLC5916...\n",i,d2);
+		if (!HpCh_Tlc5916_SendByte(iIndex,d2,FALSE)){
+			goto exit1;
+		}
+
 		printf("Sending 1st digit 0x%x =>  0x%x to TLC5916...\n",i,d1);
 		if (!HpCh_Tlc5916_SendByte(iIndex,d1,TRUE)){
 			goto exit1;

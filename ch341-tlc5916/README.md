@@ -2,8 +2,10 @@
 
 > WARNING!
 >
-> Work in progress. Currently sends `0` to `0xF` decoded to
-> 1st digit on LED display.
+> Work in progress.
+
+>  Currently sends `0` to `0xF` decoded to
+>  to 1st and to 2nd digits (showing same value on both digits)
 
 Please see [master project README][2-digit 7-segment LED with TLC5916]
 for Schematic and/or PCB.
