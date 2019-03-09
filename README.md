@@ -3,10 +3,15 @@
 Here is project how to use 2x TLC5916 with 7-segment 2-digit
 LED display.
 
-> WARNING!
->
-> This project is in design stage. It was only partially
-> verified on bread board - using single TLC5916 wiht 1-digit LED display.
+
+![PCB with TLC5916 in action](https://github.com/hpaluch/tlc5916-two-digit-display/blob/master/assets/tcl5916-pcb.jpg?raw=true) 
+
+
+Project status:
+
+Board was tested successfully. See 
+subproject [Connecting TLC5916 to PC using LC 341A USB adapter][Connecting TLC5916 to PC using LC 341A USB adapter] for example.
+
 
 # Design files
 
@@ -70,6 +75,14 @@ Following Eagle libraries were used:
   made in late 90's in college - 
   used definition of [2-digit HD-A544D LED display][HD-A544D]
 
+Board was made by [gatema.cz][gatema.cz] for
+around 700 CZK (roughly 32 USD) including:
+
+* 2 layers
+* plated holes
+* solder mask
+* top silk screen
+
 
 # Bill of Material
 
@@ -97,6 +110,7 @@ Design shortcomings:
   to allow custom power supply (for example `+12V`) different
   from main circuit `+5V` power supply.
 
+[gatema.cz]: https://extranet.gatema.cz/dps/konfiguratorpool.aspx
 [DS1021-1x20SF1-10]: https://www.gme.cz/oboustranny-kolik-s1g20-2-54mm-v-13-80mm
 [TLC5916 - tme.eu]: https://www.tme.eu/en/details/tlc5916in/led-drivers/texas-instruments/
 [Connecting TLC5916 to PC using LC 341A USB adapter]: https://github.com/hpaluch/tlc5916-two-digit-display/tree/master/ch341-tlc5916
