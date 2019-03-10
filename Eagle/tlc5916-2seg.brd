@@ -3,7 +3,7 @@
 <eagle version="9.3.0">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="50" unitdist="mil" unit="mil" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -116,6 +116,8 @@
 <hole x="93.98" y="43.18" drill="2.54"/>
 <dimension x1="0" y1="49.53" x2="99.06" y2="49.53" x3="49.53" y3="50.8" textsize="1.778" layer="1"/>
 <dimension x1="-1.27" y1="48.26" x2="-1.27" y2="0" x3="-2.54" y3="24.13" textsize="1.778" layer="1"/>
+<text x="8.89" y="40.64" size="1.778" layer="1">PCB rev. 1.1
+2019-03-10</text>
 </plain>
 <libraries>
 <library name="capacitor-wima" urn="urn:adsk.eagle:library:116">
@@ -1647,12 +1649,12 @@ design rules under a new name.</description>
 <attribute name="NAME" x="45.085" y="14.605" size="1.778" layer="25"/>
 <attribute name="VALUE" x="45.085" y="12.065" size="1.778" layer="27"/>
 </element>
-<element name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" package="0207/10" package3d_urn="urn:adsk.eagle:package:23491/1" value="5k" x="11.43" y="34.29" smashed="yes">
+<element name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" package="0207/10" package3d_urn="urn:adsk.eagle:package:23491/1" value="1k" x="11.43" y="34.29" smashed="yes">
 <attribute name="NAME" x="8.382" y="35.814" size="1.27" layer="25" ratio="10"/>
 <attribute name="SPICEPREFIX" value="R" x="30.48" y="-22.86" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="9.1694" y="33.655" size="1.27" layer="27" ratio="10"/>
 </element>
-<element name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" package="0207/10" package3d_urn="urn:adsk.eagle:package:23491/1" value="5k" x="88.9" y="15.24" smashed="yes" rot="R180">
+<element name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" package="0207/10" package3d_urn="urn:adsk.eagle:package:23491/1" value="1k" x="88.9" y="15.24" smashed="yes" rot="R180">
 <attribute name="NAME" x="91.948" y="13.716" size="1.27" layer="25" ratio="10" rot="R180"/>
 <attribute name="SPICEPREFIX" value="R" x="57.15" y="72.39" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="91.1606" y="15.875" size="1.27" layer="27" ratio="10" rot="R180"/>
@@ -1933,6 +1935,10 @@ design rules under a new name.</description>
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)

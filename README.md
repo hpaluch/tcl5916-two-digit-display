@@ -6,6 +6,8 @@ LED display.
 
 ![PCB with TLC5916 in action](https://github.com/hpaluch/tlc5916-two-digit-display/blob/master/assets/tcl5916-pcb.jpg?raw=true) 
 
+Board revision 1.0 (initial) is shown on picture.
+
 
 Project status:
 
@@ -15,10 +17,8 @@ subproject [Connecting TLC5916 to PC using LC 341A USB adapter][Connecting TLC59
 
 # Design files
 
-> Early design comments (prototype on bread-board):
->
-> Use lower value for `R1` and `R2` - `1K` seems to be fine.
-> I guessed the `5K` values because of complex data sheet. However finally:
+Design files are in revision 1.1, 2019-03-10. New values
+of R1 and R2 were computed using this setup:
 
 The relation between R<sub>ext</sub> and I<sub>led</sub> is following
 (default configuration after power-up):
@@ -83,6 +83,11 @@ around 700 CZK (roughly 32 USD) including:
 * solder mask
 * top silk screen
 
+NOTE: Remember to follow instructions in 
+[eagle-dokumentace.pdf][eagle-dokumentace.pdf]
+from [Technicke informace][Technicke informace]
+(provided in Czech only)
+
 
 # Bill of Material
 
@@ -110,6 +115,8 @@ Design shortcomings:
   to allow custom power supply (for example `+12V`) different
   from main circuit `+5V` power supply.
 
+[Technicke informace]: https://www.gatema.cz/plosne-spoje/technicke-informace/default/7?do=reloadInfo
+[eagle-dokumentace.pdf]: http://www.gatema.cz/file-link/eagle-dokumentace.pdf
 [gatema.cz]: https://extranet.gatema.cz/dps/konfiguratorpool.aspx
 [DS1021-1x20SF1-10]: https://www.gme.cz/oboustranny-kolik-s1g20-2-54mm-v-13-80mm
 [TLC5916 - tme.eu]: https://www.tme.eu/en/details/tlc5916in/led-drivers/texas-instruments/
